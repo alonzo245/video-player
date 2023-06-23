@@ -17,7 +17,7 @@ export default () => {
 
   return (
     <div className={styles.container}>
-      <video width="750" height="500" controls>
+      <video className={styles.videoElement} controls>
         <source src={data.src} type={data.type} />
       </video>
     </div>

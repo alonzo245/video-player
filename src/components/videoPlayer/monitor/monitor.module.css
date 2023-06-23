@@ -1,2 +1,6 @@
 .container {
 }
+
+.container > .videoElement {
+  max-width: 500px;
+}
