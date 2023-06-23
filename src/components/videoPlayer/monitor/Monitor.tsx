@@ -8,7 +8,6 @@ export default () => {
   const videoRef = useRef<any>(null);
 
   const handleOnLoad = (event: any) => {
-    console.log(event);
     setState({
       ...state,
       isLoaded: true,

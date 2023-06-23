@@ -5,7 +5,6 @@ import styles from "./timelineBar.module.css";
 export default () => {
   const [position, setposition] = useState<string>("0px");
   const { state } = usePlayerState();
-  console.log(state?.currentVideo?.currentTime);
 
   const niddlePosition = () => {
     const timelineUnit = 480 / Number(state?.currentVideo?.duration);
