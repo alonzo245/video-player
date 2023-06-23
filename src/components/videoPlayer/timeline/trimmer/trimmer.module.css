@@ -1,0 +1,16 @@
+.trimmer {
+  height: 100%;
+  width: 8px;
+  background-color: #c3b604;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trimmer > .handle {
+  height: 15px;
+  width: 3px;
+  background-color: #454545;
+  border-radius: 3px;
+}
