@@ -1,25 +1,18 @@
+import { usePlayerState } from "../../../hooks/usePlayerState";
 import MonitorControllers from "../monitorControllers/MonitorControllers";
 import styles from "./monitor.module.css";
 
-type videoType = {
-  type: string;
-  src: string;
-};
-
 export default () => {
-  const data: videoType = {
-    type: "video/mp4",
-    src: "http://localhost:3000/assets/mock.mp4",
-  };
+  const { state } = usePlayerState();
 
-  if (!data?.src) {
+  if (!state?.src) {
     return <div>Loading...</div>;
   }
 
   return (
     <div className={styles.container}>
       <video className={styles.videoElement}>
-        <source src={data.src} type={data.type} />
+        <source src={state.src} type={state.type} />
       </video>
       <MonitorControllers />
     </div>
