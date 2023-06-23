@@ -7,8 +7,6 @@ export default () => {
   const { state, setState } = usePlayerState();
 
   const playPause = () => {
-    console.log(!state.player.playing);
-
     setState({
       ...state,
       player: { ...state.player, playing: !state.player.playing },

@@ -1,9 +1,18 @@
+import { useEffect, useRef } from "react";
 import { usePlayerState } from "../../../hooks/usePlayerState";
 import MonitorControllers from "../monitorControllers/MonitorControllers";
 import styles from "./monitor.module.css";
 
 export default () => {
-  const { state } = usePlayerState();
+  const { state, setState } = usePlayerState();
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    // console.log(videoRef?.current);
+    if (videoRef?.current) {
+      setState({ ...state, videoAttributes: videoRef?.current });
+    }
+  }, [state?.src]);
 
   if (!state?.src) {
     return <div>Loading...</div>;
@@ -11,7 +20,7 @@ export default () => {
 
   return (
     <div className={styles.container}>
-      <video className={styles.videoElement}>
+      <video ref={videoRef} className={styles.videoElement}>
         <source src={state.src} type={state.type} />
       </video>
       <MonitorControllers />
