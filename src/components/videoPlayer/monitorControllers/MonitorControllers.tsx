@@ -7,9 +7,18 @@ export default () => {
   const { state, setState } = usePlayerState();
 
   const playPause = () => {
+    // console.log(state?.currentVideo);
+    const playing = !state.player.playing;
+
+    if (playing) {
+      state?.currentVideo.play();
+    } else {
+      state?.currentVideo.pause();
+    }
+
     setState({
       ...state,
-      player: { ...state.player, playing: !state.player.playing },
+      player: { ...state.player, playing },
     });
   };
 

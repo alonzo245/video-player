@@ -8,9 +8,8 @@ export default () => {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    // console.log(videoRef?.current);
     if (videoRef?.current) {
-      setState({ ...state, videoAttributes: videoRef?.current });
+      setState({ ...state, currentVideo: videoRef?.current });
     }
   }, [state?.src]);
 
