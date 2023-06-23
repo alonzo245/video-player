@@ -10,8 +10,13 @@
   max-width: 500px;
 }
 
+.container > .volume {
+  cursor: pointer;
+}
+
 .container > .play {
   margin-left: 40px;
+  cursor: pointer;
 }
 
 .container > .duration {
