@@ -1,8 +1,8 @@
 .container {
   background-color: #000;
-  padding: 20px;
+  padding: 20px 20px 10px 20px;
 }
 
 .container > .videoElement {
-  max-width: 500px;
+  width: 500px;
 }

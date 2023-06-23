@@ -1,3 +1,4 @@
+import MonitorControllers from "../monitorControllers/MonitorControllers";
 import styles from "./monitor.module.css";
 
 type videoType = {
@@ -17,9 +18,10 @@ export default () => {
 
   return (
     <div className={styles.container}>
-      <video className={styles.videoElement} controls>
+      <video className={styles.videoElement}>
         <source src={data.src} type={data.type} />
       </video>
+      <MonitorControllers />
     </div>
   );
 };
