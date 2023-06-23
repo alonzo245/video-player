@@ -21,7 +21,7 @@ export default () => {
       <div className={styles.container} style={{ left: position }}>
         <div className={styles.niddle}></div>
       </div>
-      <VideoFrameExtractor />
+      {/* <VideoFrameExtractor /> */}
     </>
   );
 };
