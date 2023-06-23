@@ -1,5 +1,9 @@
 .container {
   margin: 0 auto;
   max-width: 1000px;
-  border: 1px solid red;
+  height: 100vh;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
