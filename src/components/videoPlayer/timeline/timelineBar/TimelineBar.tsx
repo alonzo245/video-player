@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { usePlayerState } from "../../../../hooks/usePlayerState";
 import styles from "./timelineBar.module.css";
-import VideoFrameExtractor from "../../../videoFrameExtractor/VideoFrameExtractor";
 
 export default () => {
   const [position, setposition] = useState<string>("0px");
