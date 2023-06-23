@@ -7,6 +7,8 @@ export default () => {
     player: {
       volume: "unmuted",
       status: "playing",
+      originalStart: 0,
+      originalEnd: 50,
     },
   };
   return (
@@ -26,7 +28,9 @@ export default () => {
         )}
       </div>
 
-      <div className={styles.duration}></div>
+      <div className={styles.duration}>
+        {state?.player?.originalStart} / {state?.player?.originalEnd}
+      </div>
     </div>
   );
 };

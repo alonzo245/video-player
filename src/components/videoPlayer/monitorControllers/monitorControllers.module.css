@@ -9,3 +9,6 @@
 .container > .videoElement {
   max-width: 500px;
 }
+.container > .duration {
+  color: #fff;
+}
