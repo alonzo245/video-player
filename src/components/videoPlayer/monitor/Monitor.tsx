@@ -5,13 +5,12 @@ import styles from "./monitor.module.css";
 
 export default () => {
   const { state, setState } = usePlayerState();
-  const videoRef = useRef(null);
+  const videoRef = useRef<any>(null);
 
-  useEffect(() => {
-    if (videoRef?.current) {
-      setState({ ...state, currentVideo: videoRef?.current });
-    }
-  }, [state?.src]);
+  const handleOnLoad = (event: any) => {
+    console.log(event);
+    setState({ ...state, currentVideo: videoRef?.current });
+  };
 
   if (!state?.src) {
     return <div>Loading...</div>;
@@ -19,7 +18,11 @@ export default () => {
 
   return (
     <div className={styles.container}>
-      <video ref={videoRef} className={styles.videoElement}>
+      <video
+        onLoadedMetadata={handleOnLoad}
+        ref={videoRef}
+        className={styles.videoElement}
+      >
         <source src={state.src} type={state.type} />
       </video>
       <MonitorControllers />

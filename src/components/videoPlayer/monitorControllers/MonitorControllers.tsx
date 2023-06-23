@@ -6,11 +6,10 @@ import styles from "./monitorControllers.module.css";
 export default () => {
   const { state, setState } = usePlayerState();
 
-  const playPause = () => {
-    // console.log(state?.currentVideo);
-    const playing = !state.player.playing;
+  const togglePlaying = () => {
+    const isPlaying = state.player.isPlaying;
 
-    if (playing) {
+    if (!isPlaying) {
       state?.currentVideo.play();
     } else {
       state?.currentVideo.pause();
@@ -18,21 +17,36 @@ export default () => {
 
     setState({
       ...state,
-      player: { ...state.player, playing },
+      player: { ...state.player, isPlaying: !isPlaying },
+    });
+  };
+
+  const toggleMute = () => {
+    const isMute = state.player.isMute;
+
+    if (isMute) {
+      state.currentVideo.volume = 1;
+    } else {
+      state.currentVideo.volume = 0;
+    }
+
+    setState({
+      ...state,
+      player: { ...state.player, isMute: !isMute },
     });
   };
 
   return (
     <div className={styles.container}>
-      <div className={styles.volume}>
-        {state?.player?.volume === "unmuted" ? (
+      <div className={styles.volume} onClick={toggleMute}>
+        {state?.player?.isMute ? (
           <BsFillVolumeMuteFill color="#fff" size={30} />
         ) : (
           <BsFillVolumeDownFill color="#fff" size={30} />
         )}
       </div>
-      <div className={styles.play} onClick={playPause}>
-        {state?.player?.playing ? (
+      <div className={styles.play} onClick={togglePlaying}>
+        {state?.player?.isPlaying ? (
           <FaPause color="#fff" size={15} />
         ) : (
           <FaPlay color="#fff" size={15} />
@@ -40,7 +54,7 @@ export default () => {
       </div>
 
       <div className={styles.duration}>
-        {state?.player?.originalStart} / {state?.player?.originalEnd}
+        {state?.currentVideo?.currentTime} / {state?.currentVideo?.duration}
       </div>
     </div>
   );

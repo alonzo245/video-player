@@ -15,8 +15,8 @@ export default () => {
       type: "video/mp4",
       src: "http://localhost:3000/assets/mock.mp4",
       player: {
-        volume: "unmuted",
-        playing: false,
+        isMute: false,
+        isPlaying: false,
         originalStart: 0,
         originalEnd: 50,
       },
