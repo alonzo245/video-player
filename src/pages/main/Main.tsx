@@ -17,7 +17,7 @@ export default () => {
       player: {
         isMute: false,
         isPlaying: false,
-        originalStart: 0,
+        originalVideoDuration: 0,
         originalEnd: 50,
       },
     });

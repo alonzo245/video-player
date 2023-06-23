@@ -9,7 +9,11 @@ export default () => {
 
   const handleOnLoad = (event: any) => {
     console.log(event);
-    setState({ ...state, currentVideo: videoRef?.current });
+    setState({
+      ...state,
+      originalVideoDuration: event.duration,
+      currentVideo: videoRef?.current,
+    });
   };
 
   if (!state?.src) {
