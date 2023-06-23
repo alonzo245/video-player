@@ -11,6 +11,7 @@ export default () => {
     console.log(event);
     setState({
       ...state,
+      isLoaded: true,
       originalVideoDuration: event.duration,
       currentVideo: videoRef?.current,
     });
@@ -22,6 +23,9 @@ export default () => {
 
   return (
     <div className={styles.container}>
+      {!state.isLoaded && (
+        <div className={styles.loadingMonitor}>Loading...</div>
+      )}
       <video
         onLoadedMetadata={handleOnLoad}
         ref={videoRef}
