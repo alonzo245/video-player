@@ -1,0 +1,11 @@
+.container {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container > .videoElement {
+  max-width: 500px;
+}
