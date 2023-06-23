@@ -54,7 +54,7 @@ export default () => {
       </div>
 
       <div className={styles.duration}>
-        {(state?.currentVideo?.currentTime || 0).toFixed(2)} /{" "}
+        {(state?.currentVideo?.currentTime || 0).toFixed(2)} /
         {state?.currentVideo?.duration}
       </div>
     </div>

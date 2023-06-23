@@ -11,4 +11,7 @@
 }
 .container > .duration {
   color: #fff;
+  width: 70px;
+  font-size: 14px;
+  text-align: right;
 }
