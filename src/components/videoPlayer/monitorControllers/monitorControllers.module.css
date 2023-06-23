@@ -9,9 +9,14 @@
 .container > .videoElement {
   max-width: 500px;
 }
+
+.container > .play {
+  margin-left: 40px;
+}
+
 .container > .duration {
   color: #fff;
-  width: 90px;
+  width: 80px;
   font-size: 14px;
   text-align: right;
 }
