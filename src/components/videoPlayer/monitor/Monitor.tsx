@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { usePlayerState } from "../../../hooks/usePlayerState";
 import MonitorControllers from "../monitorControllers/MonitorControllers";
 import styles from "./monitor.module.css";
