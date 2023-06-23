@@ -15,9 +15,7 @@ export default () => {
   };
 
   useEffect(() => {
-    if (!state?.player?.isPlaying) {
-      setposition(`${niddlePosition()}px`);
-    }
+    setposition(`${niddlePosition()}px`);
   }, [state?.player?.isPlaying]);
 
   return (
